@@ -6,7 +6,7 @@ class Character:
     self.id = uuid.uuid4()
     self.attack = 1
     self.defense = 1
-    self.health = 1
+    self.health = 10
     self.stamina = 1
     self.magic = 1
     self.exp = 0
@@ -22,7 +22,15 @@ class Character:
                       'talisman2': None,
                       'talisman3': None,
                       'talisman4': None}
+    self.statuses = {'poisoned': False,
+                     'burned': False,
+                     'drenched': False,
+                     'confused': False,
+                     'paralyzed': False,
+                     'bloodless': False}
+    self.statusEffects = self.statuses.keys()
     self.slots = self.equipment.keys()
+    print('User ' + self.title + ' initiated with id ' + str(self.id))
     
   def getItemFromInventory(self, id):
     for item in self.inventory:

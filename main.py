@@ -14,6 +14,3 @@ greatsword2 = user.getItemFromInventory(greatsword.id)
 print(str(greatsword2.id))
 
 print(user.slots)
-
-
-
