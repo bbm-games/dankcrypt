@@ -61,26 +61,60 @@ class Character:
       print('Added ' + object.title + ' with id ' + str(object.id) +
             ' to inventory.')
 
-  def removeFromInventory(self, id):
+  def removeFromInventory(self, object):
+    # allows you to pass in an id or an object
+    id = object.id if isinstance(object, Object) else object
+    for thing in self.inventory:
+      if thing.id == id:
+        self.inventory.remove(thing)
+        print('Removed ' + thing.title + ' with id ' + str(thing.id) +
+              ' from inventory.')
+        return True
+    return False
 
-    def thingy(thing):
-      print('Removed ' + thing.title + ' with id ' + str(thing.id) +
-            ' from inventory.')
-      return thing
-
-    self.inventory = [
-        thingy(thing) for thing in self.inventory if thing.id != id
-    ]
+  def inInventory(self, object):
+    return object.id in [thing.id for thing in self.inventory]
 
   def equipItem(self, object, slot):
     if object.equippable:
       if slot in object.equippableSlots:
         self.equipment[slot] = object
-      object.equipped = True
-      print('Equipped ' + object.title + ' with id ' + str(object.id) +
-            ' to slot ' + slot)
+        # use the object's equip method
+        object.equipMethodStatAdjustment(self)
+        # mark this object as equipped now
+        self.equipped = True
+        return True  # successful equip
     else:
-      return None
+      print('Cannot equip ' + object.title + ' as object is not equippable.')
+      return False  # unsuccessful equip
+
+  def unequip(self, slot):
+    if slot in self.equipment.keys():
+      if self.equipment[slot] is not None:
+        self.equipment[slot].equipped = False
+      else:
+        print('There is nothing to unequip in slot ' + slot)
+      return True  # successful unequip
+    else:
+      print('Please provide a valid slot to unequip')
+      return False  # unsuccessful unequip
+
+  def consumeItem(self, object):
+    # check to see if item is inventory, since only items in inventory can be consumed
+    if self.inInventory(object):
+      if object.consumable:
+        # use the object's consume method
+        object.consumeMethodStatAdjustment(self)
+        # now that the object is consumed, remove it from the inventory.
+        self.removeFromInventory(object.id)
+        return True  # successful consume
+      else:
+        print('Cannot consume ' + object.title +
+              ' as object is not consumable.')
+        return False  # unsuccesful consume
+    else:
+      print("Attempted to consume item that wasn't in inventory")
+      return False
 
   def giveExp(self, num=0):
     self.exp += num
