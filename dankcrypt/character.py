@@ -90,8 +90,12 @@ class Character:
 
   def unequip(self, slot):
     if slot in self.equipment.keys():
-      if self.equipment[slot] is not None:
+      if isinstance(self.equipment[slot], Object):
+        print('User ' + self.title + ' unequipped ' +
+              self.equipment[slot].title + " from " + slot)
+        # actually unequip item now
         self.equipment[slot].equipped = False
+        self.equipment[slot] = None
       else:
         print('There is nothing to unequip in slot ' + slot)
       return True  # successful unequip

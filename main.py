@@ -17,6 +17,8 @@ user.equipItem(greatsword, 'leftarm')
 greatsword2 = user.getItemFromInventory(greatsword.id)
 print(str(greatsword2.id))
 
+user.unequip('leftarm')
+
 user.addToInventory(herb)
 print(user.inventory)
 user.consumeItem(herb)
