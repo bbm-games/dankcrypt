@@ -17,6 +17,7 @@ class Character:
     self.exp = 0
     self.level = 0
     self.inventory = []
+
     self.equipment = {'head': None, 
                       'torso': None, 
                       'legs': None, 
@@ -27,12 +28,14 @@ class Character:
                       'talisman2': None,
                       'talisman3': None,
                       'talisman4': None}
-    self.statuses = {'poisoned': False,
-                     'burned': False,
-                     'drenched': False,
-                     'confused': False,
-                     'paralyzed': False,
-                     'bloodless': False}
+
+    self.statuses = {'poisoned': 0,
+                     'burned': 0,
+                     'drenched': 0,
+                     'confused': 0,
+                     'paralyzed': 0,
+                     'bloodless': 0}  # Status effects are a percentage of buildup
+
     self.statusEffects = self.statuses.keys()
     self.slots = self.equipment.keys()
     print('User ' + self.title + ' initiated with id ' + str(self.id))
@@ -68,5 +71,14 @@ class Character:
   
   #TODO: work on XP table and leveling curves and point allotment 
   def levelUp(self):
-    self.level
+    # the curves
+    exp = lambda level: level ** 3  # exp(level) = level ** 3
+    level = lambda exp: exp ** (1/3)
 
+    extraLevels = int(level(self.exp)) - self.level
+    extraExp = self.exp - exp(self.level)
+
+    # boost attributes accordingly
+
+    # set a new level for the character
+    self.level += extraLevels
