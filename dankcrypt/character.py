@@ -9,6 +9,10 @@ class Character:
     self.id = uuid.uuid4()
     self.gold = 0
     self.sprite = None
+    self.posX = 0
+    self.posY = 0
+    self.width = 1
+    self.height = 1
 
     # These are the skills you can put attribute points into
     self.attributes = {
