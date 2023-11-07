@@ -1,4 +1,5 @@
 import dankcrypt
+import dankcrypt.consumables.potions
 
 engine = dankcrypt.Engine('dankcrypt')
 print(engine.title)
@@ -7,8 +8,7 @@ greatsword = dankcrypt.Object('greatsword')
 greatsword.equippable = True
 greatsword.equippableSlots += ['leftarm', 'rightarm']
 
-herb = dankcrypt.Object('herb')
-herb.consumable = True
+herbpotion = dankcrypt.consumables.potions.HealthPotion('herbpotion')
 
 user = dankcrypt.Character('Guts')
 user.addToInventory(greatsword)
@@ -19,7 +19,7 @@ print(str(greatsword2.id))
 
 user.unequip('leftarm')
 
-user.addToInventory(herb)
+user.addToInventory(herbpotion)
 print(user.inventory)
-user.consumeItem(herb)
+user.consumeItem(herbpotion)
 print(user.inventory)
