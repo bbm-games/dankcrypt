@@ -8,6 +8,7 @@ class Character:
     self.title = title
     self.id = uuid.uuid4()
     self.gold = 0
+    self.sprite = None
 
     # These are the skills you can put attribute points into
     self.attributes = {

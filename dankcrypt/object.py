@@ -14,6 +14,8 @@ class Object:
     self.consumable = consumable
     self.equippableSlots = equippableSlots
     self.equipped = False
+    self.lore = "Default item description."
+    self.sprite = None
 
   def getId(self):
     return self.id
