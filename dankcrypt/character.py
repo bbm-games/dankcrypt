@@ -1,4 +1,5 @@
 from .object import *
+from collections import Counter
 
 
 class Character:
@@ -9,17 +10,19 @@ class Character:
     self.gold = 0
 
     # These are the skills you can put attribute points into
-    self.attack = 1  # probability to rolling a hit
-    self.strength = 1  # how strong your hits will be
-    self.defense = 1  # probability of blocking a hit
-    self.health = 10  # health
-    self.stamina = 1  # stamina, how long you can run
-    self.magic = 1  # how strong your magical attacks can be
-    self.wisdom = 1  # item/lore discovery rate
-    self.mana = 10  # how much spells you can cast
+    self.attributes = {
+        'attack': 1,  # probability to rolling a hit
+        'strength': 1,  # how strong your hits will be
+        'defense': 1,  # probability of blocking a hit
+        'health': 10,  # health
+        'stamina': 1,  # stamina, how long you can run
+        'magic': 1,  # how strong your magical attacks can be
+        'wisdom': 1,  # item/lore discovery rate
+        'mana': 10  # how much spells you can cast
+    }
 
     self.baseWeight = 5  # how big of a bbm you have at baseline
-    self.maxLoad = (self.baseWeight / 4) + (self.strength / 4)
+    self.maxLoad = (self.baseWeight / 4) + (self.attributes['strength'] / 4)
     self.exp = 0
     self.level = 0
     self.inventory = []
@@ -153,14 +156,6 @@ class Character:
 
     if extraLevels == sum(allotment.values()):
       # add stats to the character
-      self.attack += allotment['attack']
-      self.strength += allotment['strength']
-      self.defense += allotment['defense']
-      self.health += allotment['health']
-      self.stamina += allotment['stamina']
-      self.magic += allotment['magic']
-      self.wisdom += allotment['wisdom']
-      self.mana += allotment['mana']
-
+      self.attributes = dict(Counter(self.attributes) + Counter(allotment))
       # set a new level for the character
       self.level += extraLevels
