@@ -4,11 +4,16 @@ class Character:
   def __init__(self, title):
     self.title = title
     self.id = uuid.uuid4()
-    self.attack = 1
-    self.defense = 1
-    self.health = 10
-    self.stamina = 1
-    self.magic = 1
+    self.attack = 1          # probability to rolling a hit
+    self.defense = 1         # probability of blocking a hit
+    self.health = 10         # health
+    self.stamina = 1         # stamina, how long you can run
+    self.magic = 1           # how strong your magical attacks can be
+    self.wisdom = 1          # item/lore discovery rate
+    self.mana = 10           # how much spells you can cast
+    self.baseWeight = 5      # how big of a bbm you have at baseline 
+    self.strength = 1        # how strong your hits will be
+    self.maxLoad = (self.baseWeight / 4) + (self.strength/4)
     self.exp = 0
     self.level = 0
     self.inventory = []
@@ -61,7 +66,7 @@ class Character:
   def giveExp(self, num = 0):
     self.exp += num
   
-  #TODO: work on XP table and leveling curves 
+  #TODO: work on XP table and leveling curves and point allotment 
   def levelUp(self):
     self.level
 

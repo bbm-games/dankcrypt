@@ -1,6 +1,6 @@
 import dankcrypt
 
-engine = dankcrypt.Engine("dankcrypt")
+engine = dankcrypt.Engine('dankcrypt')
 print(engine.title)
 
 greatsword = dankcrypt.Object('greatsword')
