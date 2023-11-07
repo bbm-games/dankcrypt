@@ -6,6 +6,7 @@ class Character:
   def __init__(self, title):
     self.title = title
     self.id = uuid.uuid4()
+    self.gold = 0
 
     # These are the skills you can put attribute points into
     self.attack = 1  # probability to rolling a hit
