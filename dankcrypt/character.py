@@ -1,7 +1,9 @@
 import random
 from .object import *
-from collections import Counter
 from .engine import *
+
+#TODO: find alternatives to counter
+from collections import Counter
 
 
 class Character:
@@ -163,7 +165,7 @@ class Character:
 
     if extraLevels == sum(allotment.values()):
       # add stats to the character
-      self.attributes = dict(Counter(self.attributes) + Counter(allotment))
+      self.attributes = addDicts(self.attributes, allotment)
       # set a new level for the character
       self.level += extraLevels
 
@@ -175,7 +177,7 @@ class Character:
       print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
 
   def applyStatusInflictions(self, statuses):
-    self.statuses = dict(Counter(self.statuses) + Counter(statuses))
+    self.statuses = addDicts(self.statuses, statuses)
     self.statuses = {
         key: value if value <= 1 else 1
         for key, value in self.statuses
@@ -208,7 +210,7 @@ class Character:
               Counter(item.statusResistances) for item in enemy.equipment
               if not None
           ]))
-      # make sure none of the percentage values in modifiedVictimStatusResistances are greater than one
+      # make sure none of the percentage values in modifiedVictimStatusResistances are greater than 1
       modifiedVictimStatusResistancesClean = {
           key: value if value <= 1 else 1
           for key, value in modifiedVictimStatusResistances.items()
@@ -221,14 +223,10 @@ class Character:
         # attack landed, TODO: make a more complex formula involving strength
         enemy.applyDamage(self.modifiedAttackerAttributes['strength'])
         # inflict status effect minus any status infliction resistances
-        negatedStatusInfliction = {
-            k: v * modifiedVictimStatusResistancesClean[k]
-            for k, v in modifiedAttackerStatusInflictions.items() if k in dict2
-        }
+        negatedStatusInfliction = multiplyDicts(modifiedVictimStatusResistancesClean, modifiedAttackerStatusInflictions)
+        
         enemy.applyStatusInflictions(
-            dict(
-                Counter(modifiedAttackerStatusInflictions) -
-                Counter(negatedStatusInfliction)))
+            subtractDicts(modifiedAttackerStatusInflictions, negatedStatusInfliction))
       else:
         # attack missed
         print('User ' + self.title + ' missed a melee attack on ' +
