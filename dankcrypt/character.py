@@ -1,6 +1,7 @@
 import random
 from .object import *
 from collections import Counter
+from .engine import *
 
 
 class Character:
@@ -175,33 +176,63 @@ class Character:
 
   def applyStatusInflictions(self, statuses):
     self.statuses = dict(Counter(self.statuses) + Counter(statuses))
-    self.statuses = {key: value if value <= 1 else 1 for key, value in self.statuses}
+    self.statuses = {
+        key: value if value <= 1 else 1
+        for key, value in self.statuses
+    }
 
   def meleeAttack(self, slot, enemy):
     # get the weapon used for the attack
-    if(self.equipment[slot]):
+    if (self.equipment[slot]):
       # get the weapon that will be used for attacking
       weapon = self.equipment[slot]
 
       # get the adjusted attributes of the character attacking and the victim
-      modifiedAttackerAttributes = dict(sum([Counter(self.attributes)] + [Counter(item.attributeBoost) for item in self.equipment if not None]))
-      modifiedVictimAttributes = dict(sum([Counter(enemy.attributes)] + [Counter(item.attributeBoost) for item in enemy.equipment if not None]))
-      modifiedAttackerStatusInflictions = dict(sum([Counter(item.statusInflictions) for item in self.equipment if not None]))
-      modifiedVictimStatusResistances = dict(sum([Counter(item.statusResistances) for item in enemy.equipment if not None]))
+      modifiedAttackerAttributes = dict(
+          sum([Counter(self.attributes)] + [
+              Counter(item.attributeBoost)
+              for item in self.equipment if not None
+          ]))
+      modifiedVictimAttributes = dict(
+          sum([Counter(enemy.attributes)] + [
+              Counter(item.attributeBoost)
+              for item in enemy.equipment if not None
+          ]))
+      modifiedAttackerStatusInflictions = dict(
+          sum([
+              Counter(item.statusInflictions) for item in self.equipment
+              if not None
+          ]))
+      modifiedVictimStatusResistances = dict(
+          sum([
+              Counter(item.statusResistances) for item in enemy.equipment
+              if not None
+          ]))
       # make sure none of the percentage values in modifiedVictimStatusResistances are greater than one
-      modifiedVictimStatusResistancesClean = {key: value if value <= 1 else 1 for key, value in modifiedVictimStatusResistances.items()}
+      modifiedVictimStatusResistancesClean = {
+          key: value if value <= 1 else 1
+          for key, value in modifiedVictimStatusResistances.items()
+      }
 
       # roll to see if the attack lands
-      cutoff = (50 + ((modifiedAttackerAttributes['attack'] - modifiedVictimAttributes['defense'])/100)*50)/100
+      cutoff = (50 + ((modifiedAttackerAttributes['attack'] -
+                       modifiedVictimAttributes['defense']) / 100) * 50) / 100
       if random.random() <= cutoff:
         # attack landed, TODO: make a more complex formula involving strength
         enemy.applyDamage(self.modifiedAttackerAttributes['strength'])
         # inflict status effect minus any status infliction resistances
-        negatedStatusInfliction = {k : v * modifiedVictimStatusResistancesClean[k] for k, v in modifiedAttackerStatusInflictions.items() if k in dict2}
-        enemy.applyStatusInflictions(dict(Counter(modifiedAttackerStatusInflictions) - Counter(negatedStatusInfliction)))
+        negatedStatusInfliction = {
+            k: v * modifiedVictimStatusResistancesClean[k]
+            for k, v in modifiedAttackerStatusInflictions.items() if k in dict2
+        }
+        enemy.applyStatusInflictions(
+            dict(
+                Counter(modifiedAttackerStatusInflictions) -
+                Counter(negatedStatusInfliction)))
       else:
         # attack missed
-        print('User ' + self.title + ' missed a melee attack on ' + enemy.title)
+        print('User ' + self.title + ' missed a melee attack on ' +
+              enemy.title)
     else:
       # bare hands
       pass
