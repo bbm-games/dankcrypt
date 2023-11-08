@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/dankcrypt.dir/main.cpp.o -o dankcrypt  /usr/lib/libSDL2_ttf.so /usr/lib/libSDL2_mixer.so /usr/lib/libSDL2_image.so /usr/lib/libSDL2.so 
