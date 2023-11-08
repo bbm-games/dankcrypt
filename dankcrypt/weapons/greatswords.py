@@ -17,7 +17,7 @@ class FireGreatSword(Object):
         'wisdom': 0,  # item/lore discovery rate
         'mana': 0  # how much spells you can cast
     }
-    self.statusInfliction = {
+    self.statusInflictions = {
         'poisoned': 0,
         'burned': 0.15,  # invokes a burn status effect
         'drenched': 0,
@@ -25,6 +25,17 @@ class FireGreatSword(Object):
         'paralyzed': 0,
         'bloodless': 0
     }
+    # The percentage of status inflictions this item will let you resist
+    self.statusResistances = {
+        'poisoned': 0,
+        'burned': 0,  
+        'drenched': 0,
+        'confused': 0,
+        'paralyzed': 0,
+        'bloodless': 0
+    }
 
+  # only stat adjustment that will be made is nothing
   def equipMethodStatAdjustment(self, character):
-    super().equipMethodStatAdjustment(character)
+    print("User " + character.title + " equipped " + self.title)
+    print("No stat adjustments made, as this weapon does not permanently change base stats.")
