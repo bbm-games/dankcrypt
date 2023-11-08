@@ -18,6 +18,8 @@
 #define FPS_INTERVAL 1.0 //seconds.
 
 static const char *MAINTHEME = "assets/main.mp3";
+int WINDOW_HEIGHT = 480;
+int WINDOW_WIDTH = 640;
 
 using namespace std; // technically a bad practice
 
@@ -81,8 +83,8 @@ int main( int argc, char *argv[] ) {
   SDL_Window *window = SDL_CreateWindow("dankcrypt",
     SDL_WINDOWPOS_UNDEFINED,
     SDL_WINDOWPOS_UNDEFINED,
-    640,
-    480,
+    WINDOW_WIDTH,
+    WINDOW_HEIGHT,
     SDL_WINDOW_OPENGL);
   if (window == nullptr)
   {
@@ -275,7 +277,12 @@ int main( int argc, char *argv[] ) {
     drawText(renderer, "FPS: " + to_string(fps_current),20,1,1,255,0,0);
 
     // draw mouse position
-    drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY),20,1,480 - 20,255,0,0);
+    drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY),20,1,480 - 25,255,215,0);
+
+
+    // draw something centrally
+    drawText(renderer, "Dankcrypt", 50, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/2 - 50/2,255,215,0);
+
 
     // Show the renderer contents
     SDL_RenderPresent(renderer);
