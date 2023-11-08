@@ -224,7 +224,6 @@ class Character:
         enemy.applyDamage(self.modifiedAttackerAttributes['strength'])
         # inflict status effect minus any status infliction resistances
         negatedStatusInfliction = multiplyDicts(modifiedVictimStatusResistancesClean, modifiedAttackerStatusInflictions)
-        
         enemy.applyStatusInflictions(
             subtractDicts(modifiedAttackerStatusInflictions, negatedStatusInfliction))
       else:
