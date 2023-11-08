@@ -1,2 +1,2 @@
-dankcryptEngine/build/*
-.DS_Store
+dankcryptEngine/build/
+*.DS_Store
