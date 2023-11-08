@@ -1,279 +1,383 @@
 CMakeFiles/dankcrypt.dir/main.cpp.o: \
- /home/ethanjoseph/Documents/Projects/dankcrypt/dankcryptEngine/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/13.2.1/iostream \
- /usr/include/c++/13.2.1/bits/requires_hosted.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
- /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
- /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/13.2.1/ostream /usr/include/c++/13.2.1/ios \
- /usr/include/c++/13.2.1/iosfwd /usr/include/c++/13.2.1/bits/stringfwd.h \
- /usr/include/c++/13.2.1/bits/memoryfwd.h \
- /usr/include/c++/13.2.1/bits/postypes.h /usr/include/c++/13.2.1/cwchar \
- /usr/include/wchar.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
- /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
- /usr/include/bits/types/mbstate_t.h \
- /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h /usr/include/c++/13.2.1/exception \
- /usr/include/c++/13.2.1/bits/exception.h \
- /usr/include/c++/13.2.1/bits/exception_ptr.h \
- /usr/include/c++/13.2.1/bits/exception_defines.h \
- /usr/include/c++/13.2.1/bits/cxxabi_init_exception.h \
- /usr/include/c++/13.2.1/typeinfo \
- /usr/include/c++/13.2.1/bits/hash_bytes.h /usr/include/c++/13.2.1/new \
- /usr/include/c++/13.2.1/bits/move.h /usr/include/c++/13.2.1/type_traits \
- /usr/include/c++/13.2.1/bits/nested_exception.h \
- /usr/include/c++/13.2.1/bits/char_traits.h \
- /usr/include/c++/13.2.1/bits/localefwd.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/13.2.1/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/13.2.1/cctype \
- /usr/include/ctype.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
- /usr/include/bits/endian.h /usr/include/bits/endianness.h \
- /usr/include/c++/13.2.1/bits/ios_base.h \
- /usr/include/c++/13.2.1/ext/atomicity.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
- /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
- /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
- /usr/include/bits/pthreadtypes-arch.h \
- /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
- /usr/include/bits/struct_rwlock.h /usr/include/bits/setjmp.h \
- /usr/include/bits/types/__sigset_t.h \
- /usr/include/bits/types/struct___jmp_buf_tag.h \
- /usr/include/bits/pthread_stack_min-dynamic.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h \
- /usr/include/c++/13.2.1/bits/locale_classes.h \
- /usr/include/c++/13.2.1/string /usr/include/c++/13.2.1/bits/allocator.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/13.2.1/bits/new_allocator.h \
- /usr/include/c++/13.2.1/bits/functexcept.h \
- /usr/include/c++/13.2.1/bits/cpp_type_traits.h \
- /usr/include/c++/13.2.1/bits/ostream_insert.h \
- /usr/include/c++/13.2.1/bits/cxxabi_forced.h \
- /usr/include/c++/13.2.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/13.2.1/bits/concept_check.h \
- /usr/include/c++/13.2.1/debug/assertions.h \
- /usr/include/c++/13.2.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/13.2.1/bits/stl_iterator.h \
- /usr/include/c++/13.2.1/ext/type_traits.h \
- /usr/include/c++/13.2.1/bits/ptr_traits.h \
- /usr/include/c++/13.2.1/bits/stl_function.h \
- /usr/include/c++/13.2.1/backward/binders.h \
- /usr/include/c++/13.2.1/ext/numeric_traits.h \
- /usr/include/c++/13.2.1/bits/stl_algobase.h \
- /usr/include/c++/13.2.1/bits/stl_pair.h \
- /usr/include/c++/13.2.1/bits/utility.h \
- /usr/include/c++/13.2.1/debug/debug.h \
- /usr/include/c++/13.2.1/bits/predefined_ops.h \
- /usr/include/c++/13.2.1/bit /usr/include/c++/13.2.1/bits/refwrap.h \
- /usr/include/c++/13.2.1/bits/invoke.h \
- /usr/include/c++/13.2.1/bits/range_access.h \
- /usr/include/c++/13.2.1/initializer_list \
- /usr/include/c++/13.2.1/bits/basic_string.h \
- /usr/include/c++/13.2.1/ext/alloc_traits.h \
- /usr/include/c++/13.2.1/bits/alloc_traits.h \
- /usr/include/c++/13.2.1/bits/stl_construct.h \
- /usr/include/c++/13.2.1/ext/string_conversions.h \
- /usr/include/c++/13.2.1/cstdlib /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/bits/stdint-intn.h \
- /usr/include/endian.h /usr/include/bits/byteswap.h \
- /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/c++/13.2.1/bits/std_abs.h /usr/include/c++/13.2.1/cstdio \
- /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
- /usr/include/bits/types/__fpos64_t.h \
- /usr/include/bits/types/struct_FILE.h \
- /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/c++/13.2.1/cerrno \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/bits/types/error_t.h \
- /usr/include/c++/13.2.1/bits/charconv.h \
- /usr/include/c++/13.2.1/bits/functional_hash.h \
- /usr/include/c++/13.2.1/bits/basic_string.tcc \
- /usr/include/c++/13.2.1/bits/locale_classes.tcc \
- /usr/include/c++/13.2.1/system_error \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
- /usr/include/c++/13.2.1/stdexcept /usr/include/c++/13.2.1/streambuf \
- /usr/include/c++/13.2.1/bits/streambuf.tcc \
- /usr/include/c++/13.2.1/bits/basic_ios.h \
- /usr/include/c++/13.2.1/bits/locale_facets.h \
- /usr/include/c++/13.2.1/cwctype /usr/include/wctype.h \
- /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/13.2.1/bits/streambuf_iterator.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/13.2.1/bits/locale_facets.tcc \
- /usr/include/c++/13.2.1/bits/basic_ios.tcc \
- /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/sstream \
- /usr/include/c++/13.2.1/bits/sstream.tcc /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/c++/13.2.1/stdlib.h /usr/include/string.h \
- /usr/include/strings.h /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/c++/13.2.1/math.h /usr/include/c++/13.2.1/cmath \
- /usr/include/math.h /usr/include/bits/math-vector.h \
- /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
- /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
- /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_error.h \
- /usr/include/SDL2/SDL_endian.h /usr/include/SDL2/SDL_mutex.h \
- /usr/include/SDL2/SDL_thread.h /usr/include/SDL2/SDL_rwops.h \
- /usr/include/SDL2/SDL_clipboard.h /usr/include/SDL2/SDL_cpuinfo.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/adxintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmiintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/bmi2intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cetintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cldemoteintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clflushoptintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clwbintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/clzerointrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/cmpccxaddintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/enqcmdintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fxsrintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lzcntintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/lwpintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/movdirintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitxintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pconfigintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/popcntintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pkuintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchiintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/raointintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rdseedintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/rtmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/serializeintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/sgxintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tbmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/uintrintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/waitpkgintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wbnoinvdintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavecintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsaveoptintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xtestintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/hresetintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/emmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/smmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/wmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxifmaintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxvnniint8intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx2intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512pfintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512cdintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bwintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512dqintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlbwintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vldqintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmaintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512ifmavlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmiintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmivlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124fmapsintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx5124vnniwintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vbmi2vlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnnivlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vpopcntdqvlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bitalgintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vp2intersectvlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512fp16vlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/shaintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/fmaintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/f16cintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/gfniintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vaesintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/vpclmulqdqintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16vlintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512bf16intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avxneconvertintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxtileintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxint8intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxbf16intrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxcomplexintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchwintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/keylockerintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h \
- /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_video.h \
- /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_rect.h \
- /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
- /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_keycode.h \
- /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_mouse.h \
- /usr/include/SDL2/SDL_joystick.h /usr/include/SDL2/SDL_guid.h \
- /usr/include/SDL2/SDL_gamecontroller.h /usr/include/SDL2/SDL_sensor.h \
- /usr/include/SDL2/SDL_quit.h /usr/include/SDL2/SDL_gesture.h \
- /usr/include/SDL2/SDL_touch.h /usr/include/SDL2/SDL_filesystem.h \
- /usr/include/SDL2/SDL_haptic.h /usr/include/SDL2/SDL_hidapi.h \
- /usr/include/SDL2/SDL_hints.h /usr/include/SDL2/SDL_loadso.h \
- /usr/include/SDL2/SDL_log.h /usr/include/SDL2/SDL_messagebox.h \
- /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
- /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_image.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_ttf.h \
- /usr/include/SDL2/SDL_mixer.h /usr/include/c++/13.2.1/vector \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/13.2.1/bits/stl_vector.h \
- /usr/include/c++/13.2.1/bits/stl_bvector.h \
- /usr/include/c++/13.2.1/bits/vector.tcc /usr/include/c++/13.2.1/fstream \
- /usr/include/c++/13.2.1/bits/codecvt.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/13.2.1/bits/fstream.tcc /usr/include/c++/13.2.1/map \
- /usr/include/c++/13.2.1/bits/stl_tree.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
- /usr/include/c++/13.2.1/bits/stl_map.h /usr/include/c++/13.2.1/tuple \
- /usr/include/c++/13.2.1/bits/uses_allocator.h \
- /usr/include/c++/13.2.1/bits/stl_multimap.h \
- /usr/include/c++/13.2.1/bits/erase_if.h /usr/include/c++/13.2.1/ctime
+  /Users/newlynjoseph/dankcrypt/dankcryptEngine/main.cpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__config \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ios \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iosfwd \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/wchar.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stddef.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/stddef.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__nullptr \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/wchar.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/cdefs.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_symbol_aliasing.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_posix_availability.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/Availability.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityVersions.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityInternal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_null.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_size_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mbstate_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_intptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uintptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ct_rune_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rune_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wchar_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/stdarg.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_va_list.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_ctermid.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_off_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ssize_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/time.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_clock_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_time_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_timespec.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/__wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wint_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_wctype_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/ctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_ctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/runetype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__locale \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__availability \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string_view \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__string \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/algorithm \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/initializer_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstddef \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/version \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/type_traits \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstring \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_errno_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/strings.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/utility \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tuple \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdint \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdint.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_intmax_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_uintmax_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__debug \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/memory \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/typeinfo \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/exception \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/base.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__undef_macros \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdlib \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdlib.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/stdlib.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/wait.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_pid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_id_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/signal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/appleapiopts.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/signal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/signal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/_mcontext.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/_mcontext.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/mach/machine/_structs.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/mach/i386/_structs.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_attr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_sigaltstack.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ucontext.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_sigset_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/resource.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_timeval.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/endian.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/endian.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_endian.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/libkern/_OSByteOrder.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/libkern/i386/_OSByteOrder.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/alloca.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/malloc/_malloc.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_dev_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mode_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/new \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iterator \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__functional_base \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/tuple \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdexcept \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/allocator_traits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/pointer_traits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/utilities.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/atomic \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__threading_support \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/chrono \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ctime \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ratio \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/climits \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/machine/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/i386/_limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/syslimits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/errno.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/errno.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/errno.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread/sched.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread/pthread_impl.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_cond_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_key_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_once_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread/qos.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/qos.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mach_port_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sched.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cassert \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/functional \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bit \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bits \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdio \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cwchar \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cwctype \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cctype \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_wctrans_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/mutex \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__mutex_base \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/system_error \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__errc \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cerrno \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/locale.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/locale.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_locale.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_xlocale.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_ctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/__wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_stdlib.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_time.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_wchar.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_wctype.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/streambuf \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/istream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ostream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/locale \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/nl_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_char.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_short.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_caddr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_blkcnt_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_blksize_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_gid_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_in_addr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_in_port_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ino64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_key_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_nlink_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_useconds_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_suseconds_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_def.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_setsize.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_set.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_clr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_zero.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_isset.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/_types/_nl_item.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bit_reference \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/sstream \
+  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
+  /usr/local/include/SDL2/SDL_stdinc.h \
+  /usr/local/include/SDL2/SDL_config.h \
+  /usr/local/include/SDL2/SDL_platform.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityMacros.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/TargetConditionals.h \
+  /usr/local/include/SDL2/begin_code.h \
+  /usr/local/include/SDL2/close_code.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/inttypes.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/math.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/math.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/float.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/float.h \
+  /usr/local/include/SDL2/SDL_assert.h \
+  /usr/local/include/SDL2/SDL_atomic.h \
+  /usr/local/include/SDL2/SDL_audio.h \
+  /usr/local/include/SDL2/SDL_error.h \
+  /usr/local/include/SDL2/SDL_endian.h \
+  /usr/local/include/SDL2/SDL_mutex.h \
+  /usr/local/include/SDL2/SDL_thread.h \
+  /usr/local/include/SDL2/SDL_rwops.h \
+  /usr/local/include/SDL2/SDL_clipboard.h \
+  /usr/local/include/SDL2/SDL_cpuinfo.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/immintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/x86gprintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/hresetintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/uintrintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/mmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/mm_malloc.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/emmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/pmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/tmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/smmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/popcntintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/wmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/__wmmintrin_aes.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/__wmmintrin_pclmul.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/clflushoptintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/clwbintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/f16cintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/vpclmulqdqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/bmiintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/bmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/lzcntintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/fmaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512fintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512bwintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512bitalgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512cdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vpopcntdqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vpopcntdqvlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vnniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlvnniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avxvnniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512dqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlbitalgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlbwintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlcdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vldqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512erintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512ifmaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512ifmavlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vbmiintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vbmivlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vbmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlvbmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512pfintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512bf16intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlbf16intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/pkuintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/vaesintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/gfniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/rtmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xtestintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/shaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/fxsrintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xsaveintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xsaveoptintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xsavecintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/xsavesintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/cetintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/adxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/rdseedintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/wbnoinvdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/cldemoteintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/waitpkgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/movdirintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/pconfigintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/sgxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/ptwriteintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/invpcidintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/keylockerintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/amxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vp2intersectintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/avx512vlvp2intersectintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/enqcmdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/serializeintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include/tsxldtrkintrin.h \
+  /usr/local/include/SDL2/SDL_events.h \
+  /usr/local/include/SDL2/SDL_video.h \
+  /usr/local/include/SDL2/SDL_pixels.h \
+  /usr/local/include/SDL2/SDL_rect.h \
+  /usr/local/include/SDL2/SDL_surface.h \
+  /usr/local/include/SDL2/SDL_blendmode.h \
+  /usr/local/include/SDL2/SDL_keyboard.h \
+  /usr/local/include/SDL2/SDL_keycode.h \
+  /usr/local/include/SDL2/SDL_scancode.h \
+  /usr/local/include/SDL2/SDL_mouse.h \
+  /usr/local/include/SDL2/SDL_joystick.h \
+  /usr/local/include/SDL2/SDL_guid.h \
+  /usr/local/include/SDL2/SDL_gamecontroller.h \
+  /usr/local/include/SDL2/SDL_sensor.h \
+  /usr/local/include/SDL2/SDL_quit.h \
+  /usr/local/include/SDL2/SDL_gesture.h \
+  /usr/local/include/SDL2/SDL_touch.h \
+  /usr/local/include/SDL2/SDL_filesystem.h \
+  /usr/local/include/SDL2/SDL_haptic.h \
+  /usr/local/include/SDL2/SDL_hidapi.h \
+  /usr/local/include/SDL2/SDL_hints.h \
+  /usr/local/include/SDL2/SDL_loadso.h /usr/local/include/SDL2/SDL_log.h \
+  /usr/local/include/SDL2/SDL_messagebox.h \
+  /usr/local/include/SDL2/SDL_metal.h \
+  /usr/local/include/SDL2/SDL_power.h \
+  /usr/local/include/SDL2/SDL_render.h \
+  /usr/local/include/SDL2/SDL_shape.h \
+  /usr/local/include/SDL2/SDL_system.h \
+  /usr/local/include/SDL2/SDL_timer.h \
+  /usr/local/include/SDL2/SDL_version.h \
+  /usr/local/include/SDL2/SDL_locale.h \
+  /usr/local/include/SDL2/SDL_misc.h /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL_ttf.h /usr/local/include/SDL2/SDL_mixer.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__split_buffer \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stack \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/deque \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/map \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tree \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__node_handle \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/optional \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cmath
