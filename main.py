@@ -1,12 +1,17 @@
 import dankcrypt
 import dankcrypt.consumables.potions
+import dankcrypt.weapons.greatswords
 
 engine = dankcrypt.Engine('dankcrypt')
 print(engine.title)
 
-greatsword = dankcrypt.Object('greatsword')
+greatsword = dankcrypt.weapons.greatswords.FireGreatSword('gutssword')
 greatsword.equippable = True
 greatsword.equippableSlots += ['leftarm', 'rightarm']
+
+greatsword2 = dankcrypt.weapons.greatswords.FireGreatSword('griffithsword')
+greatsword2.equippable = True
+greatsword2.equippableSlots += ['leftarm', 'rightarm']
 
 herbpotion = dankcrypt.consumables.potions.HealthPotion('herbpotion')
 
@@ -14,12 +19,16 @@ user = dankcrypt.Character('Guts')
 user.addToInventory(greatsword)
 user.equipItem(greatsword, 'leftarm')
 
-greatsword2 = user.getItemFromInventory(greatsword.id)
-print(str(greatsword2.id))
+enemy = dankcrypt.Character('Griffith')
+enemy.addToInventory(greatsword2)
+enemy.equipItem(greatsword2, 'leftarm')
 
-user.unequip('leftarm')
+# have griffith attack
+print(user.statuses.values())
+enemy.meleeAttack('leftarm', user)
+print(user.statuses.values())
 
+# heal the user
 user.addToInventory(herbpotion)
-print(user.inventory)
 user.consumeItem(herbpotion)
-print(user.inventory)
+

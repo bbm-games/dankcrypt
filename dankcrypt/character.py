@@ -30,6 +30,8 @@ class Character:
         'mana': 10  # how much spells you can cast
     }
 
+    self.currentHealth = self.attributes['health']
+    self.currentMana = self.attributes['mana']
     self.baseWeight = 5  # how big of a bbm you have at baseline
     self.maxLoad = (self.baseWeight / 4) + (self.attributes['strength'] / 4)
     self.exp = 0
@@ -58,8 +60,8 @@ class Character:
         'bloodless': 0
     }  # Status effects are a percentage of buildup
 
-    self.statusEffects = self.statuses.keys()
-    self.slots = self.equipment.keys()
+    self.STATUS_EFFECTS = self.statuses.keys()
+    self.EQUIPMENT_SLOTS = self.equipment.keys()
     print('User ' + self.title + ' initiated with id ' + str(self.id))
 
   def getItemFromInventory(self, id):
@@ -170,17 +172,17 @@ class Character:
       self.level += extraLevels
 
   def applyDamage(self, value):
-    if (self.health - value) > 0:
-      self.health = self.health - value
+    if (self.currentHealth - value) > 0:
+      self.currentHealth = self.currentHealth - value
     else:
-      self.health = 0
+      self.currentHealth = 0
       print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
 
   def applyStatusInflictions(self, statuses):
     self.statuses = addDicts(self.statuses, statuses)
     self.statuses = {
-        key: value if value <= 1 else 1
-        for key, value in self.statuses
+        key: (value if value <= 1 else  1)
+        for key, value in self.statuses.items()
     }
 
   def meleeAttack(self, slot, enemy):
@@ -190,26 +192,44 @@ class Character:
       weapon = self.equipment[slot]
 
       # get the adjusted attributes of the character attacking and the victim
-      modifiedAttackerAttributes = dict(
-          sum([Counter(self.attributes)] + [
-              Counter(item.attributeBoost)
-              for item in self.equipment if not None
-          ]))
-      modifiedVictimAttributes = dict(
-          sum([Counter(enemy.attributes)] + [
-              Counter(item.attributeBoost)
-              for item in enemy.equipment if not None
-          ]))
-      modifiedAttackerStatusInflictions = dict(
-          sum([
-              Counter(item.statusInflictions) for item in self.equipment
-              if not None
-          ]))
-      modifiedVictimStatusResistances = dict(
-          sum([
-              Counter(item.statusResistances) for item in enemy.equipment
-              if not None
-          ]))
+      
+      modifiedAttackerAttributes = self.attributes
+      for item in self.equipment.values():
+        if item: # make sure it's not a None in the equipment
+          modifiedAttackerAttributes = addDicts(modifiedAttackerAttributes, item.attributeBoost)
+      
+      modifiedVictimAttributes = enemy.attributes
+      for item in enemy.equipment.values():
+        if item: # make sure it's not a None in the equipment
+          modifiedVictimAttributes = addDicts(modifiedVictimAttributes, item.attributeBoost)
+      
+      # default values
+      modifiedAttackerStatusInflictions = {
+        'poisoned': 0,
+        'burned': 0,  
+        'drenched': 0,
+        'confused': 0,
+        'paralyzed': 0,
+        'bloodless': 0
+      }
+      for item in self.equipment.values():
+        if item:
+          modifiedAttackerStatusInflictions = addDicts(modifiedAttackerStatusInflictions, item.statusInflictions)
+      
+      modifiedVictimStatusResistances = {
+        'poisoned': 0,
+        'burned': 0,  
+        'drenched': 0,
+        'confused': 0,
+        'paralyzed': 0,
+        'bloodless': 0
+      }
+      for item in enemy.equipment.values():
+        if item:
+          modifiedVictimStatusResistances = addDicts(modifiedVictimStatusResistances, item.statusResistances)
+      
+
+
       # make sure none of the percentage values in modifiedVictimStatusResistances are greater than 1
       modifiedVictimStatusResistancesClean = {
           key: value if value <= 1 else 1
@@ -221,14 +241,16 @@ class Character:
                        modifiedVictimAttributes['defense']) / 100) * 50) / 100
       if random.random() <= cutoff:
         # attack landed, TODO: make a more complex formula involving strength
-        enemy.applyDamage(self.modifiedAttackerAttributes['strength'])
+        damage = modifiedAttackerAttributes['strength']
+        enemy.applyDamage(damage)
         # inflict status effect minus any status infliction resistances
         negatedStatusInfliction = multiplyDicts(modifiedVictimStatusResistancesClean, modifiedAttackerStatusInflictions)
         enemy.applyStatusInflictions(
             subtractDicts(modifiedAttackerStatusInflictions, negatedStatusInfliction))
+        print(self.title + ' melee attacked ' + enemy.title + ' for ' + str(damage) + ' damage.')
       else:
         # attack missed
-        print('User ' + self.title + ' missed a melee attack on ' +
+        print(self.title + ' missed a melee attack on ' +
               enemy.title)
     else:
       # bare hands
