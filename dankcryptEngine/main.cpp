@@ -2,16 +2,76 @@
 #include <sstream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
+#include <vector>
+#include <fstream>
+#include <map>
+
 #include <cstdlib>   // rand and srand
+#include <ctime>     // For the time function
+#include <cmath>     // abs
 //#include "engine.h"
 //#include "entity.h"
 
 #define FPS_INTERVAL 1.0 //seconds.
 
+static const char *MAINTHEME = "assets/main.mp3";
+
 using namespace std; // technically a bad practice
+
+// helper function for drawing text
+void drawText(SDL_Renderer* mrenderer, string text,int text_size,int x,int y, Uint8 r,Uint8 g,Uint8 b)
+{
+    TTF_Font* arial = TTF_OpenFont("assets/font.ttf",text_size);
+    if(arial == NULL)
+    {
+        printf("TTF_OpenFont: %s\n",TTF_GetError());
+    }
+    SDL_Color textColor = {r,g,b};
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(arial,text.c_str(),textColor);
+    if(surfaceMessage == NULL)
+    {
+        printf("Unable to render text surface: %s\n",TTF_GetError());
+    }
+    SDL_Texture* message = SDL_CreateTextureFromSurface(mrenderer,surfaceMessage);
+    SDL_FreeSurface(surfaceMessage);
+    int text_width = surfaceMessage->w;
+    int text_height = surfaceMessage->h;
+    SDL_Rect textRect{x,y,text_width,text_height};
+
+    SDL_RenderCopy(mrenderer,message,NULL,&textRect);
+    TTF_CloseFont(arial);
+}
 
 
 int main( int argc, char *argv[] ) {
+
+  // Get TTF initialized
+  if ( TTF_Init() < 0 ) {
+    cout << "Error initializing SDL_ttf: " << TTF_GetError() << endl;
+  }
+
+  // get music setup
+  int result = 0;
+  int flags = MIX_INIT_MP3;
+
+  if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+      printf("Failed to init SDL\n");
+      exit(1);
+  }
+
+  if (flags != (result = Mix_Init(flags))) {
+      printf("Could not initialize mixer (result: %d).\n", result);
+      printf("Mix_Init: %s\n", Mix_GetError());
+      exit(1);
+  }
+
+  Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 640);
+  Mix_Music *music = Mix_LoadMUS(MAINTHEME);
+  Mix_VolumeMusic(MIX_MAX_VOLUME/8);
+  Mix_PlayMusic(music, 1);
 
   // FPS calculation variables
   Uint32 fps_lasttime = SDL_GetTicks(); // the last recorded time.
@@ -154,7 +214,6 @@ int main( int argc, char *argv[] ) {
           case SDL_BUTTON_LEFT:
             {
               printf("Left mouse button pressed at %d, %d. \n", mouseX, mouseY);
-
               break;
             }
             
@@ -200,7 +259,7 @@ int main( int argc, char *argv[] ) {
     SDL_RenderClear(renderer);
 
   
-    // make default background white
+    // make default background black
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 225);
 
     
@@ -213,7 +272,10 @@ int main( int argc, char *argv[] ) {
       fps_frames = 0;
     }
 
-    //newengine -> drawText(to_string(fps_current),20,1,1,255,0,0);
+    drawText(renderer, "FPS: " + to_string(fps_current),20,1,1,255,0,0);
+
+    // draw mouse position
+    drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY),20,1,480 - 20,255,0,0);
 
     // Show the renderer contents
     SDL_RenderPresent(renderer);
@@ -230,4 +292,3 @@ int main( int argc, char *argv[] ) {
 
   return 0;
 }
-
