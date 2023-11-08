@@ -23,7 +23,7 @@ enemy = dankcrypt.Character('Griffith')
 enemy.addToInventory(greatsword2)
 enemy.equipItem(greatsword2, 'leftarm')
 
-# have griffith attack
+# have griffith attack 10 times
 print(user.statuses.values())
 for i in range(10):
   enemy.meleeAttack('leftarm', user)
