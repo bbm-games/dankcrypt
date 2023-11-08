@@ -137,6 +137,7 @@ int main( int argc, char *argv[] ) {
 
   while (SDL_GetTicks() - initTime < 5000)
   { 
+    
     // Get the next event
     SDL_Event event;
     if (SDL_PollEvent(&event))
@@ -164,6 +165,8 @@ int main( int argc, char *argv[] ) {
     SDL_RenderClear(renderer);
 
     SDL_RenderCopy(renderer, splashtexture, NULL, NULL);
+    // draw something centrally
+    drawText(renderer, "BBM Games", 30, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/2 - 30/2,255,215,0);
     SDL_RenderPresent(renderer);
     //SDL_Delay(10);
     
@@ -276,13 +279,22 @@ int main( int argc, char *argv[] ) {
 
     drawText(renderer, "FPS: " + to_string(fps_current),20,1,1,255,0,0);
 
+
+    // * OPTIONAL CODE LINE HERE */ 
     // draw mouse position
     drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY),20,1,480 - 25,255,215,0);
 
 
-    // draw something centrally
-    drawText(renderer, "Dankcrypt", 50, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/2 - 50/2,255,215,0);
 
+    /* CODE FOR DRAWING THE MENU!*/
+    // title
+    drawText(renderer, "Dankcrypt", 40, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/4 - 50/2 + 50 ,255,215,0);
+
+    // menu options
+    drawText(renderer, "Load Game", 20, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/4 - 50/2 + 125,255,215,0);
+    drawText(renderer, "New Game", 20, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/4 - 50/2 + 150,255,215,0);
+    drawText(renderer, "Settings", 20, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/4 - 50/2 + 175,255,215,0);
+    drawText(renderer, "Quit", 20, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/4 - 50/2 + 200,255,215,0);
 
     // Show the renderer contents
     SDL_RenderPresent(renderer);
