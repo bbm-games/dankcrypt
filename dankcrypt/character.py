@@ -181,9 +181,44 @@ class Character:
   def applyStatusInflictions(self, statuses):
     self.statuses = addDicts(self.statuses, statuses)
     self.statuses = {
-        key: (value if value <= 1 else  1)
+        key: (value if value <= 1 else 1)
         for key, value in self.statuses.items()
     }
+
+  # apply temporal changes to character
+  def nextTick(self):
+
+    # apply status damages is the status is 100%
+    for key, value in self.statuses.items():
+
+      if value >= 1:
+        if key == 'poisoned':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        elif key == 'burned':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        elif key == 'drenched':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        elif key == 'confused':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        elif key == 'paralyzed':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        elif key == 'bloodless':
+          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
+          self.applyDamage(1)
+        else:
+          print('Unknown status ' + key)
+
+    # natural status mitigation (10% per tick)
+    for key in self.statuses.keys():
+      if self.statuses[key] - 0.1 > 0:
+        self.statuses[key] -= 0.1
+      else:
+        self.statuses[key] = 0
 
   def meleeAttack(self, slot, enemy):
     # get the weapon used for the attack
@@ -192,43 +227,45 @@ class Character:
       weapon = self.equipment[slot]
 
       # get the adjusted attributes of the character attacking and the victim
-      
+
       modifiedAttackerAttributes = self.attributes
       for item in self.equipment.values():
-        if item: # make sure it's not a None in the equipment
-          modifiedAttackerAttributes = addDicts(modifiedAttackerAttributes, item.attributeBoost)
-      
+        if item:  # make sure it's not a None in the equipment
+          modifiedAttackerAttributes = addDicts(modifiedAttackerAttributes,
+                                                item.attributeBoost)
+
       modifiedVictimAttributes = enemy.attributes
       for item in enemy.equipment.values():
-        if item: # make sure it's not a None in the equipment
-          modifiedVictimAttributes = addDicts(modifiedVictimAttributes, item.attributeBoost)
-      
+        if item:  # make sure it's not a None in the equipment
+          modifiedVictimAttributes = addDicts(modifiedVictimAttributes,
+                                              item.attributeBoost)
+
       # default values
       modifiedAttackerStatusInflictions = {
-        'poisoned': 0,
-        'burned': 0,  
-        'drenched': 0,
-        'confused': 0,
-        'paralyzed': 0,
-        'bloodless': 0
+          'poisoned': 0,
+          'burned': 0,
+          'drenched': 0,
+          'confused': 0,
+          'paralyzed': 0,
+          'bloodless': 0
       }
       for item in self.equipment.values():
         if item:
-          modifiedAttackerStatusInflictions = addDicts(modifiedAttackerStatusInflictions, item.statusInflictions)
-      
+          modifiedAttackerStatusInflictions = addDicts(
+              modifiedAttackerStatusInflictions, item.statusInflictions)
+
       modifiedVictimStatusResistances = {
-        'poisoned': 0,
-        'burned': 0,  
-        'drenched': 0,
-        'confused': 0,
-        'paralyzed': 0,
-        'bloodless': 0
+          'poisoned': 0,
+          'burned': 0,
+          'drenched': 0,
+          'confused': 0,
+          'paralyzed': 0,
+          'bloodless': 0
       }
       for item in enemy.equipment.values():
         if item:
-          modifiedVictimStatusResistances = addDicts(modifiedVictimStatusResistances, item.statusResistances)
-      
-
+          modifiedVictimStatusResistances = addDicts(
+              modifiedVictimStatusResistances, item.statusResistances)
 
       # make sure none of the percentage values in modifiedVictimStatusResistances are greater than 1
       modifiedVictimStatusResistancesClean = {
@@ -244,14 +281,17 @@ class Character:
         damage = modifiedAttackerAttributes['strength']
         enemy.applyDamage(damage)
         # inflict status effect minus any status infliction resistances
-        negatedStatusInfliction = multiplyDicts(modifiedVictimStatusResistancesClean, modifiedAttackerStatusInflictions)
+        negatedStatusInfliction = multiplyDicts(
+            modifiedVictimStatusResistancesClean,
+            modifiedAttackerStatusInflictions)
         enemy.applyStatusInflictions(
-            subtractDicts(modifiedAttackerStatusInflictions, negatedStatusInfliction))
-        print(self.title + ' melee attacked ' + enemy.title + ' for ' + str(damage) + ' damage.')
+            subtractDicts(modifiedAttackerStatusInflictions,
+                          negatedStatusInfliction))
+        print(self.title + ' melee attacked ' + enemy.title + ' for ' +
+              str(damage) + ' damage.')
       else:
         # attack missed
-        print(self.title + ' missed a melee attack on ' +
-              enemy.title)
+        print(self.title + ' missed a melee attack on ' + enemy.title)
     else:
       # bare hands
       pass

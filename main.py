@@ -25,8 +25,11 @@ enemy.equipItem(greatsword2, 'leftarm')
 
 # have griffith attack
 print(user.statuses.values())
-enemy.meleeAttack('leftarm', user)
+for i in range(10):
+  enemy.meleeAttack('leftarm', user)
 print(user.statuses.values())
+
+user.nextTick()
 
 # heal the user
 user.addToInventory(herbpotion)
