@@ -1,4 +1,6 @@
 osx:
+	g++ -std=c++11 main.cpp -o bin/dankcrypt -Llibraries/ -lSDL2
+osx2:
 	g++ -std=c++11 main.cpp -o bin/dankcrypt -I mac/include -L mac/lib -l SDL2-2.0.0 -l SDL2_ttf-2.0.0 -l SDL2_image-2.0.0 -l SDL2_mixer-2.0.0
 mingw:
 	g++ -std=c++11 main.cpp -o bin/dankcrypt -I windows/include -L windows/lib -l SDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer -lmingw32 -lSDL2main -lSDL2
