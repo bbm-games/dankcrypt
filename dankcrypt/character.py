@@ -321,8 +321,10 @@ class Character:
 
   # returns a list of coordinates of the adjacent cells
   def getAdjacentCells(self):
-    return [[self.posX, self.posY - 1], [self.posX, self.posY + 1],
-            [self.posX - 1, self.posY], [self.posX + 1, self.posY]]
+    return {'north':[self.posX, self.posY - 1],
+            'south': [self.posX, self.posY + 1],
+            'west':[self.posX - 1, self.posY], 
+            'east':[self.posX + 1, self.posY]}
 
   # contains the lines + logic regarding anything an NPC would say
   def speech(self):

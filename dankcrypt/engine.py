@@ -32,8 +32,11 @@ class Engine:
 
   # based on player's position, load in the entities nearby that 
   def loadAdjacentEntities(self):
-    for position in self.playerChar.getAdjacentCells():
-      positionstring = str(position[0]) + ',' + str(position[1])
+    adjacentEntities = {}
+    adjacentsPositions = self.playerChar.getAdjacentCells()
+    for key, value in adjacentsPositions.items():
+      positionstring = str(value[0]) + ',' + str(value[1])
+      adjacentEntities[key] = self.mapData[positionstring]
 
   
   def newGame(self, playerName, playerVocation):
