@@ -2,9 +2,6 @@ import random
 from .object import *
 from .engine import *
 
-#TODO: find alternatives to counter
-from collections import Counter
-
 
 class Character:
 
