@@ -51,6 +51,7 @@ class Character:
         'talisman4': None
     }
 
+    # contains the users built up statuses. Once a status hits 1, temporal damage will be applied.
     self.statuses = {
         'poisoned': 0,
         'burned': 0,
@@ -188,6 +189,11 @@ class Character:
   # apply temporal changes to character
   def nextTick(self):
 
+    # state a message if the player is dead
+
+    if self.currentHealth == 0:
+      print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
+
     # apply status damages is the status is 100%
     for key, value in self.statuses.items():
 
@@ -295,3 +301,25 @@ class Character:
     else:
       # bare hands
       pass
+
+  # movement mechanics, remember origin is in top left
+  def moveUp(self, dist=1):
+    self.posY -= dist
+
+  def moveDown(self, dist=1):
+    self.posY += dist
+
+  def moveLeft(self, dist=1):
+    self.posX -= dist
+
+  def moveRight(self, dist=1):
+    self.posX += dist
+
+  # returns a list of coordinates of the adjacent cells
+  def getAdjacentCells(self):
+    return [[self.posX, self.posY - 1], [self.posX, self.posY + 1],
+            [self.posX - 1, self.posY], [self.posX + 1, self.posY]]
+
+  # contains the lines + logic regarding anything an NPC would say
+  def speech(self):
+    return "Default speech value."
