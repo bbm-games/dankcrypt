@@ -15,3 +15,12 @@ class Engine:
 
   def __init__(self, title):
     self.title = title
+
+  def initMapData(self):
+    # this function will load up the map JSON from memory. It will contain 9000^2 entries detailing the contents of the map.
+    # 
+    #
+    #
+    #
+    #
+    pass

@@ -47,7 +47,6 @@ void drawText(SDL_Renderer* mrenderer, string text,int text_size,int x,int y, Ui
     TTF_CloseFont(arial);
 }
 
-
 int main( int argc, char *argv[] ) {
 
   // Get TTF initialized
@@ -95,7 +94,6 @@ int main( int argc, char *argv[] ) {
   SDL_Surface *icon = IMG_Load("assets/icon.png");
   SDL_SetWindowIcon(window, icon);
 
-
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC || SDL_RENDERER_ACCELERATED);
   if (renderer == nullptr)
   {
@@ -104,7 +102,6 @@ int main( int argc, char *argv[] ) {
   }
 
   SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-  
   SDL_Init(SDL_INIT_AUDIO);
   
   // load WAV file
@@ -127,12 +124,10 @@ int main( int argc, char *argv[] ) {
   int height = 480;
 
   // splash screen loops
-
   SDL_Surface * splashimage = IMG_Load("assets/splash.png");
   SDL_Texture * splashtexture = SDL_CreateTextureFromSurface(renderer, splashimage);
 
   Uint32 initTime = SDL_GetTicks();
-
   Uint32 alpha = 0;
 
   while (SDL_GetTicks() - initTime < 5000)
@@ -169,14 +164,12 @@ int main( int argc, char *argv[] ) {
     drawText(renderer, "BBM Games", 30, WINDOW_WIDTH/2 - 80, WINDOW_HEIGHT/2 - 30/2,255,215,0);
     SDL_RenderPresent(renderer);
     //SDL_Delay(10);
-    
+
   }
 
   //SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_ADD);
-
   int mouseX, mouseY; // stores position of mouse
   float clickx, clicky;
-
 
   while (true)
   {
@@ -222,7 +215,6 @@ int main( int argc, char *argv[] ) {
               break;
             }
             
-
           case SDL_BUTTON_RIGHT:
             printf("Right mouse button pressed.\n");
             break;
@@ -259,15 +251,12 @@ int main( int argc, char *argv[] ) {
       }
     }
 
-    
     // CLEAR THE SCREEN
     SDL_RenderClear(renderer);
-
   
     // make default background black
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 225);
 
-    
     // update and draw FPS
     fps_frames++;
     if (fps_lasttime < SDL_GetTicks() - FPS_INTERVAL*1000)
@@ -279,12 +268,9 @@ int main( int argc, char *argv[] ) {
 
     drawText(renderer, "FPS: " + to_string(fps_current),20,1,1,255,0,0);
 
-
     // * OPTIONAL CODE LINE HERE */ 
     // draw mouse position
     drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY),20,1,480 - 25,255,215,0);
-
-
 
     /* CODE FOR DRAWING THE MENU!*/
     // title
@@ -302,7 +288,6 @@ int main( int argc, char *argv[] ) {
   }
 
   // Tidy up
-
   SDL_CloseAudioDevice(deviceId);
   SDL_FreeWAV(wavBuffer);
   SDL_DestroyRenderer(renderer);
