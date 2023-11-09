@@ -1,4 +1,8 @@
 # helper functions
+import dankcrypt
+import json
+
+
 def multiplyDicts(dict1, dict2):
   return {k: v * dict2[k] for k, v in dict1.items() if k in dict2}
 
@@ -15,12 +19,39 @@ class Engine:
 
   def __init__(self, title):
     self.title = title
+    self.mapData = None
+    self.playerChar = None
 
-  def initMapData(self):
+    # contains the objects that are adjacent to the player character's current position.
+    self.adjacentEntities = {
+      'north': None,
+      'south': None,
+      'east': None,
+      'west': None
+    }
+
+  # based on player's position, load in the entities nearby that 
+  def loadAdjacentEntities(self):
+    for position in self.playerChar.getAdjacentCells():
+      positionstring = str(position[0]) + ',' + str(position[1])
+
+  
+  def newGame(self, playerName, playerVocation):
+    self.playerChar = dankcrypt.Character(playerName, playerVocation)
+    self.initMapData('./assets/mapdata.json')
+  
+  # should load up a player character and a player map data
+  def loadGame(self):
+    pass
+
+
+  def initMapData(self, path):
     # this function will load up the map JSON from memory. It will contain 9000^2 entries detailing the contents of the map.
     # 
     #
     #
     #
     #
-    pass
+    with open(path) as f:
+        self.mapData = json.load(f)
+  

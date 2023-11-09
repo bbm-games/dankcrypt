@@ -8,7 +8,7 @@ from collections import Counter
 
 class Character:
 
-  def __init__(self, title):
+  def __init__(self, title, vocation = "Sellsword"):
     self.title = title
     self.id = uuid.uuid4()
     self.gold = 0
@@ -17,6 +17,10 @@ class Character:
     self.posY = 0
     self.width = 1
     self.height = 1
+    self.vocation = vocation
+
+    # contains the extra XP someone would gain by killing this character
+    self.xpBonus = 0
 
     # These are the skills you can put attribute points into
     self.attributes = {
