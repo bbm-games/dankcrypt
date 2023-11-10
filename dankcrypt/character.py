@@ -1,11 +1,12 @@
 import random
 from .object import *
 from .engine import *
+import curses
 
 
 class Character:
 
-  def __init__(self, title):
+  def __init__(self, title, vocation = "Sellsword"):
     self.title = title
     self.id = uuid.uuid4()
     self.gold = 0
@@ -14,6 +15,14 @@ class Character:
     self.posY = 0
     self.width = 1
     self.height = 1
+    self.vocation = vocation
+    self.isDead = False
+    
+    with open('./dankcrypt/lore/lore.json') as f:
+      self.loreData = json.load(f)
+
+    # contains the extra XP someone would gain by killing this character
+    self.xpBonus = 0
 
     # These are the skills you can put attribute points into
     self.attributes = {
@@ -26,6 +35,9 @@ class Character:
         'wisdom': 1,  # item/lore discovery rate
         'mana': 10  # how much spells you can cast
     }
+
+    # Load in class attributes
+    self.attributes = [doc['stats'] for doc in self.loreData['vocations'] if doc['class_name'] == self.vocation][0]
 
     self.currentHealth = self.attributes['health']
     self.currentMana = self.attributes['mana']
@@ -174,7 +186,6 @@ class Character:
       self.currentHealth = self.currentHealth - value
     else:
       self.currentHealth = 0
-      print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
 
   def applyStatusInflictions(self, statuses):
     self.statuses = addDicts(self.statuses, statuses)
@@ -190,6 +201,7 @@ class Character:
 
     if self.currentHealth == 0:
       print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
+      self.isDead = True
 
     # apply status damages is the status is 100%
     for key, value in self.statuses.items():
@@ -314,8 +326,10 @@ class Character:
 
   # returns a list of coordinates of the adjacent cells
   def getAdjacentCells(self):
-    return [[self.posX, self.posY - 1], [self.posX, self.posY + 1],
-            [self.posX - 1, self.posY], [self.posX + 1, self.posY]]
+    return {'north':[self.posX, self.posY - 1],
+            'south': [self.posX, self.posY + 1],
+            'west':[self.posX - 1, self.posY], 
+            'east':[self.posX + 1, self.posY]}
 
   # contains the lines + logic regarding anything an NPC would say
   def speech(self):
