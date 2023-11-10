@@ -19,7 +19,7 @@ class Weapon(Object):
     }
     self.statusInflictions = {
         'poisoned': 0,
-        'burned': 0.15,  # invokes a burn status effect
+        'burned': 0.25,  # invokes a burn status effect
         'drenched': 0,
         'confused': 0,
         'paralyzed': 0,
@@ -28,7 +28,7 @@ class Weapon(Object):
     # The percentage of status inflictions this item will let you resist
     self.statusResistances = {
         'poisoned': 0,
-        'burned': 0,  
+        'burned': 0,
         'drenched': 0,
         'confused': 0,
         'paralyzed': 0,
@@ -38,4 +38,6 @@ class Weapon(Object):
   # only stat adjustment that will be made is nothing
   def equipMethodStatAdjustment(self, character):
     print("User " + character.title + " equipped " + self.title)
-    print("No stat adjustments made, as this weapon does not permanently change base stats.")
+    print(
+        "No stat adjustments made, as this weapon does not permanently change base stats."
+    )

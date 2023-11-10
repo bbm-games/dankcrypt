@@ -6,7 +6,7 @@ import curses
 
 class Character:
 
-  def __init__(self, title, vocation = "Sellsword"):
+  def __init__(self, title, vocation="Sellsword"):
     self.title = title
     self.id = uuid.uuid4()
     self.gold = 0
@@ -17,7 +17,7 @@ class Character:
     self.height = 1
     self.vocation = vocation
     self.isDead = False
-    
+
     with open('./dankcrypt/lore/lore.json') as f:
       self.loreData = json.load(f)
 
@@ -37,7 +37,10 @@ class Character:
     }
 
     # Load in class attributes
-    self.attributes = [doc['stats'] for doc in self.loreData['vocations'] if doc['class_name'] == self.vocation][0]
+    self.attributes = [
+        doc['stats'] for doc in self.loreData['vocations']
+        if doc['class_name'] == self.vocation
+    ][0]
 
     self.currentHealth = self.attributes['health']
     self.currentMana = self.attributes['mana']
@@ -72,7 +75,7 @@ class Character:
 
     self.STATUS_EFFECTS = self.statuses.keys()
     self.EQUIPMENT_SLOTS = self.equipment.keys()
-    print('User ' + self.title + ' initiated with id ' + str(self.id))
+    print('User ' + self.title + ' initiated with id ' + str(self.id)[:8])
 
   def getItemFromInventory(self, id):
     for item in self.inventory:
@@ -83,7 +86,7 @@ class Character:
   def addToInventory(self, object):
     if isinstance(object, Object):
       self.inventory.append(object)
-      print('Added ' + object.title + ' with id ' + str(object.id) +
+      print('Added ' + object.title + ' with id ' + str(object.id)[:8] +
             ' to inventory.')
 
   def removeFromInventory(self, object):
@@ -92,7 +95,7 @@ class Character:
     for thing in self.inventory:
       if thing.id == id:
         self.inventory.remove(thing)
-        print('Removed ' + thing.title + ' with id ' + str(thing.id) +
+        print('Removed ' + thing.title + ' with id ' + str(thing.id)[:8] +
               ' from inventory.')
         return True
     return False
@@ -200,31 +203,41 @@ class Character:
     # state a message if the player is dead
 
     if self.currentHealth == 0:
-      print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
+      print('User ' + self.title + ' with id ' + str(self.id)[:8] +
+            ' just died.')
       self.isDead = True
+      # when you die all your statuses go to zero.
+      self.statuses = dict.fromkeys(self.statuses, 0)
 
     # apply status damages is the status is 100%
+    statusDamageVal = 10
     for key, value in self.statuses.items():
 
       if value >= 1:
         if key == 'poisoned':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         elif key == 'burned':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         elif key == 'drenched':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         elif key == 'confused':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         elif key == 'paralyzed':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         elif key == 'bloodless':
-          print('User ' + self.title + ' experienced 1 ' + key + ' damage.')
-          self.applyDamage(1)
+          self.applyDamage(statusDamageVal)
+          print('User ' + self.title + ' experienced ' + str(statusDamageVal) +
+                ' ' + key + ' damage.')
         else:
           print('Unknown status ' + key)
 
@@ -236,80 +249,90 @@ class Character:
         self.statuses[key] = 0
 
   def meleeAttack(self, slot, enemy):
-    # get the weapon used for the attack
-    if (self.equipment[slot]):
-      # get the weapon that will be used for attacking
-      weapon = self.equipment[slot]
+    # check to make sure enemy isn't already dead
+    if not enemy.isDead:
+      # get the weapon used for the attack
+      if (self.equipment[slot]):
+        # get the weapon that will be used for attacking
+        weapon = self.equipment[slot]
 
-      # get the adjusted attributes of the character attacking and the victim
+        # get the adjusted attributes of the character attacking and the victim
 
-      modifiedAttackerAttributes = self.attributes
-      for item in self.equipment.values():
-        if item:  # make sure it's not a None in the equipment
-          modifiedAttackerAttributes = addDicts(modifiedAttackerAttributes,
+        modifiedAttackerAttributes = self.attributes
+        for item in self.equipment.values():
+          if item:  # make sure it's not a None in the equipment
+            modifiedAttackerAttributes = addDicts(modifiedAttackerAttributes,
+                                                  item.attributeBoost)
+
+        modifiedVictimAttributes = enemy.attributes
+        for item in enemy.equipment.values():
+          if item:  # make sure it's not a None in the equipment
+            modifiedVictimAttributes = addDicts(modifiedVictimAttributes,
                                                 item.attributeBoost)
 
-      modifiedVictimAttributes = enemy.attributes
-      for item in enemy.equipment.values():
-        if item:  # make sure it's not a None in the equipment
-          modifiedVictimAttributes = addDicts(modifiedVictimAttributes,
-                                              item.attributeBoost)
+        # default values
+        modifiedAttackerStatusInflictions = {
+            'poisoned': 0,
+            'burned': 0,
+            'drenched': 0,
+            'confused': 0,
+            'paralyzed': 0,
+            'bloodless': 0
+        }
+        for item in self.equipment.values():
+          if item:
+            modifiedAttackerStatusInflictions = addDicts(
+                modifiedAttackerStatusInflictions, item.statusInflictions)
 
-      # default values
-      modifiedAttackerStatusInflictions = {
-          'poisoned': 0,
-          'burned': 0,
-          'drenched': 0,
-          'confused': 0,
-          'paralyzed': 0,
-          'bloodless': 0
-      }
-      for item in self.equipment.values():
-        if item:
-          modifiedAttackerStatusInflictions = addDicts(
-              modifiedAttackerStatusInflictions, item.statusInflictions)
+        modifiedVictimStatusResistances = {
+            'poisoned': 0,
+            'burned': 0,
+            'drenched': 0,
+            'confused': 0,
+            'paralyzed': 0,
+            'bloodless': 0
+        }
+        for item in enemy.equipment.values():
+          if item:
+            modifiedVictimStatusResistances = addDicts(
+                modifiedVictimStatusResistances, item.statusResistances)
 
-      modifiedVictimStatusResistances = {
-          'poisoned': 0,
-          'burned': 0,
-          'drenched': 0,
-          'confused': 0,
-          'paralyzed': 0,
-          'bloodless': 0
-      }
-      for item in enemy.equipment.values():
-        if item:
-          modifiedVictimStatusResistances = addDicts(
-              modifiedVictimStatusResistances, item.statusResistances)
+        # make sure none of the percentage values in modifiedVictimStatusResistances are greater than 1
+        modifiedVictimStatusResistancesClean = {
+            key: value if value <= 1 else 1
+            for key, value in modifiedVictimStatusResistances.items()
+        }
 
-      # make sure none of the percentage values in modifiedVictimStatusResistances are greater than 1
-      modifiedVictimStatusResistancesClean = {
-          key: value if value <= 1 else 1
-          for key, value in modifiedVictimStatusResistances.items()
-      }
-
-      # roll to see if the attack lands
-      cutoff = (50 + ((modifiedAttackerAttributes['attack'] -
-                       modifiedVictimAttributes['defense']) / 100) * 50) / 100
-      if random.random() <= cutoff:
-        # attack landed, TODO: make a more complex formula involving strength
-        damage = modifiedAttackerAttributes['strength']
-        enemy.applyDamage(damage)
-        # inflict status effect minus any status infliction resistances
-        negatedStatusInfliction = multiplyDicts(
-            modifiedVictimStatusResistancesClean,
-            modifiedAttackerStatusInflictions)
-        enemy.applyStatusInflictions(
-            subtractDicts(modifiedAttackerStatusInflictions,
-                          negatedStatusInfliction))
-        print(self.title + ' melee attacked ' + enemy.title + ' for ' +
-              str(damage) + ' damage.')
+        # roll to see if the attack lands
+        cutoff = (50 +
+                  ((modifiedAttackerAttributes['attack'] -
+                    modifiedVictimAttributes['defense']) / 100) * 50) / 100
+        if random.random() <= cutoff:
+          # attack landed, TODO: make a more complex formula involving strength
+          damage = modifiedAttackerAttributes['strength']
+          enemy.applyDamage(damage)
+          # inflict status effect minus any status infliction resistances
+          negatedStatusInfliction = multiplyDicts(
+              modifiedVictimStatusResistancesClean,
+              modifiedAttackerStatusInflictions)
+          enemy.applyStatusInflictions(
+              subtractDicts(modifiedAttackerStatusInflictions,
+                            negatedStatusInfliction))
+          print(self.title + ' melee attacked ' + enemy.title + ' for ' +
+                str(damage) + ' damage.')
+          print(self.title + ' applied the following status infliction to ' +
+                enemy.title + ':\n' + str(
+                    subtractDicts(modifiedAttackerStatusInflictions,
+                                  negatedStatusInfliction)))
+        else:
+          # attack missed
+          print(self.title + ' missed a melee attack on ' + enemy.title)
       else:
-        # attack missed
-        print(self.title + ' missed a melee attack on ' + enemy.title)
+        # bare hands
+        pass
     else:
-      # bare hands
-      pass
+      print(self.title + ' cannot attack ' + enemy.title +
+            ' as they are dead.')
 
   # movement mechanics, remember origin is in top left
   def moveUp(self, dist=1):
@@ -326,10 +349,12 @@ class Character:
 
   # returns a list of coordinates of the adjacent cells
   def getAdjacentCells(self):
-    return {'north':[self.posX, self.posY - 1],
-            'south': [self.posX, self.posY + 1],
-            'west':[self.posX - 1, self.posY], 
-            'east':[self.posX + 1, self.posY]}
+    return {
+        'north': [self.posX, self.posY - 1],
+        'south': [self.posX, self.posY + 1],
+        'west': [self.posX - 1, self.posY],
+        'east': [self.posX + 1, self.posY]
+    }
 
   # contains the lines + logic regarding anything an NPC would say
   def speech(self):
