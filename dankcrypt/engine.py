@@ -41,6 +41,8 @@ class Engine:
     for key, value in adjacentsPositions.items():
       positionstring = str(value[0]) + ',' + str(value[1])
       adjacentEntities[key] = self.mapData[positionstring]
+      #TODO: for each adjacentEntity document (correponding to north, south, east,west)
+      #      deserialize the objects and create instances in game
 
   
   def newGame(self, playerName, playerVocation):
