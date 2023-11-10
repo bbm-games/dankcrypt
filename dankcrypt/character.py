@@ -1,6 +1,7 @@
 import random
 from .object import *
 from .engine import *
+import curses
 
 #TODO: find alternatives to counter
 from collections import Counter
@@ -18,6 +19,7 @@ class Character:
     self.width = 1
     self.height = 1
     self.vocation = vocation
+    self.isDead = False
 
     # contains the extra XP someone would gain by killing this character
     self.xpBonus = 0
@@ -181,7 +183,6 @@ class Character:
       self.currentHealth = self.currentHealth - value
     else:
       self.currentHealth = 0
-      print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
 
   def applyStatusInflictions(self, statuses):
     self.statuses = addDicts(self.statuses, statuses)
@@ -197,6 +198,7 @@ class Character:
 
     if self.currentHealth == 0:
       print('User ' + self.title + ' with id ' + str(self.id) + ' just died.')
+      self.isDead = True
 
     # apply status damages is the status is 100%
     for key, value in self.statuses.items():

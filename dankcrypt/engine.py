@@ -22,6 +22,10 @@ class Engine:
     self.mapData = None
     self.playerChar = None
 
+    # load up lore
+    with open('./dankcrypt/lore/lore.json') as f:
+      self.loreData = json.load(f)
+
     # contains the objects that are adjacent to the player character's current position.
     self.adjacentEntities = {
       'north': None,
@@ -41,9 +45,9 @@ class Engine:
   
   def newGame(self, playerName, playerVocation):
     self.playerChar = dankcrypt.Character(playerName, playerVocation)
-    self.initMapData('./assets/mapdata.json')
+    self.initMapData('./dankcrypt/assets/mapdata.json')
   
-  # should load up a player character and a player map data
+  # TODO: should load up a player character and a player map data
   def loadGame(self):
     pass
 
