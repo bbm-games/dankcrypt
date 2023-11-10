@@ -40,7 +40,9 @@ class Engine:
     adjacentsPositions = self.playerChar.getAdjacentCells()
     for key, value in adjacentsPositions.items():
       positionstring = str(value[0]) + ',' + str(value[1])
-      adjacentEntities[key] = self.mapData[positionstring]
+      # check to make sure that you actually managed to get a document at the position index
+      if (self.mapData[positionstring]):
+        adjacentEntities[key] = self.mapData[positionstring]
       #TODO: for each adjacentEntity document (correponding to north, south, east,west)
       #      deserialize the objects and create instances in game
 
