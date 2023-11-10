@@ -28,13 +28,13 @@ class Engine:
 
     # contains the objects that are adjacent to the player character's current position.
     self.adjacentEntities = {
-      'north': None,
-      'south': None,
-      'east': None,
-      'west': None
+        'north': None,
+        'south': None,
+        'east': None,
+        'west': None
     }
 
-  # based on player's position, load in the entities nearby that 
+  # based on player's position, load in the entities nearby that
   def loadAdjacentEntities(self):
     adjacentEntities = {}
     adjacentsPositions = self.playerChar.getAdjacentCells()
@@ -44,23 +44,20 @@ class Engine:
       #TODO: for each adjacentEntity document (correponding to north, south, east,west)
       #      deserialize the objects and create instances in game
 
-  
   def newGame(self, playerName, playerVocation):
     self.playerChar = dankcrypt.Character(playerName, playerVocation)
     self.initMapData('./dankcrypt/assets/mapdata.json')
-  
+
   # TODO: should load up a player character and a player map data
   def loadGame(self):
     pass
 
-
   def initMapData(self, path):
     # this function will load up the map JSON from memory. It will contain 9000^2 entries detailing the contents of the map.
-    # 
+    #
     #
     #
     #
     #
     with open(path) as f:
-        self.mapData = json.load(f)
-  
+      self.mapData = json.load(f)
