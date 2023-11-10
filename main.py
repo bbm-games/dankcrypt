@@ -1,6 +1,6 @@
 import dankcrypt
 import dankcrypt.consumables.potions
-import dankcrypt.weapons.greatswords
+import dankcrypt.equippables.weapon
 import inquirer
 
 

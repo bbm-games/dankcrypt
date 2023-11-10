@@ -1,25 +1,28 @@
 from dankcrypt import *
 
 
-class FireGreatSword(Object):
+class Armor(Object):
 
   def __init__(self, *args, **kwargs):
-    super(FireGreatSword, self).__init__(*args, **kwargs)
+    super(Armor, self).__init__(*args, **kwargs)
     self.equippable = True
+    # TODO: specify this
     self.equippableSlots = ['leftarm', 'rightarm']
     self.attributeBoost = {
-        'attack': 5,  # probability to rolling a hit
+        'attack': 0,  # probability to rolling a hit
         'strength': 0,  # how strong your hits will be
-        'defense': 0,  # probability of blocking a hit
+        'defense': 5,  # probability of blocking a hit
         'health': 0,  # health
         'stamina': 0,  # stamina, how long you can run
         'magic': 0,  # how strong your magical attacks can be
         'wisdom': 0,  # item/lore discovery rate
         'mana': 0  # how much spells you can cast
     }
+
+    # TODO: make this applicable?
     self.statusInflictions = {
         'poisoned': 0,
-        'burned': 0.15,  # invokes a burn status effect
+        'burned': 0,  # invokes a burn status effect
         'drenched': 0,
         'confused': 0,
         'paralyzed': 0,
@@ -27,7 +30,7 @@ class FireGreatSword(Object):
     }
     # The percentage of status inflictions this item will let you resist
     self.statusResistances = {
-        'poisoned': 0,
+        'poisoned': .1,
         'burned': 0,  
         'drenched': 0,
         'confused': 0,
