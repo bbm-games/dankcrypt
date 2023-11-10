@@ -1,8 +1,6 @@
-import curses
 import dankcrypt
 import dankcrypt.consumables.potions
 import dankcrypt.weapons.greatswords
-import sys,os
 import inquirer
 
 

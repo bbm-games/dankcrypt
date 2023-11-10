@@ -20,6 +20,9 @@ class Character:
     self.height = 1
     self.vocation = vocation
     self.isDead = False
+    
+    with open('./dankcrypt/lore/lore.json') as f:
+      self.loreData = json.load(f)
 
     # contains the extra XP someone would gain by killing this character
     self.xpBonus = 0
@@ -35,6 +38,9 @@ class Character:
         'wisdom': 1,  # item/lore discovery rate
         'mana': 10  # how much spells you can cast
     }
+
+    # Load in class attributes
+    self.attributes = [doc['stats'] for doc in self.loreData['vocations'] if doc['class_name'] == self.vocation][0]
 
     self.currentHealth = self.attributes['health']
     self.currentMana = self.attributes['mana']
