@@ -23,6 +23,22 @@ int WINDOW_WIDTH = 640;
 
 using namespace std; // technically a bad practice
 
+// helper function for drawing an image tile
+SDL_Rect drawImageTile(SDL_Renderer *renderer, string imageassetpath, int x, int y, int w = WINDOW_WIDTH/24, int h = WINDOW_HEIGHT/24){
+  SDL_Surface *image = IMG_Load(imageassetpath.c_str());
+  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
+  SDL_Rect rect{x, y, w, h};
+  SDL_RenderCopy(renderer, texture, NULL, &rect);
+}
+
+// helper function for drawing an image tile
+SDL_Rect drawColorTile(SDL_Renderer *renderer, uint r, uint g, uint b, int x, int y, int w = WINDOW_WIDTH/24, int h = WINDOW_HEIGHT/24){
+  SDL_Surface *image = SDL_CreateRGBSurface(0,w,h,32,0,0,0,0);
+  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
+  SDL_Rect rect{x, y, w, h};
+  SDL_RenderCopy(renderer, texture, NULL, &rect);
+}
+
 // helper function for drawing text
 SDL_Rect drawText(SDL_Renderer *mrenderer, string text, int text_size, int x, int y, Uint8 r, Uint8 g, Uint8 b)
 {
@@ -473,6 +489,11 @@ int main(int argc, char *argv[])
     // * OPTIONAL CODE LINE HERE */
     // draw mouse position
     drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY), 20, 1, 480 - 25, 255, 215, 0);
+
+
+    // RENDER GAME WORLD
+
+    
 
     // Show the renderer contents
     SDL_RenderPresent(renderer);
