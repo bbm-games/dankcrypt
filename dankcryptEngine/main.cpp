@@ -180,7 +180,10 @@ int main(int argc, char *argv[])
   int mouseX, mouseY; // stores position of mouse
   float clickx, clicky;
 
-  while (true)
+  bool menu_loop = true;
+  bool game_loop = false;
+
+  while (menu_loop)
   {
     bool left_click = false;
     // Get the next event
@@ -318,11 +321,16 @@ int main(int argc, char *argv[])
     if (mouseX > rec1.x && mouseX < (rec1.x + rec1.w) && mouseY > rec1.y && mouseY < (rec1.y + rec1.h))
     {
       SDL_Rect rec1 = drawText(renderer, "Load Game", 20, WINDOW_WIDTH / 2 - 80, WINDOW_HEIGHT / 4 - 50 / 2 + 125, 255, 0, 0);
-    }
+     }
 
     if (mouseX > rec2.x && mouseX < (rec2.x + rec2.w) && mouseY > rec2.y && mouseY < (rec2.y + rec2.h))
     {
       SDL_Rect rec2 = drawText(renderer, "New Game", 20, WINDOW_WIDTH / 2 - 80, WINDOW_HEIGHT / 4 - 50 / 2 + 150, 255, 0, 0);
+      if(left_click){
+        // exit menu loop and start a new game
+        menu_loop = false;
+        game_loop = true;
+      }
     }
 
     if (mouseX > rec3.x && mouseX < (rec3.x + rec3.w) && mouseY > rec3.y && mouseY < (rec3.y + rec3.h))
@@ -344,6 +352,127 @@ int main(int argc, char *argv[])
             
       
     }
+
+    // Show the renderer contents
+    SDL_RenderPresent(renderer);
+  }
+
+  while(game_loop == true){
+    bool left_click = false;
+    // Get the next event
+    SDL_Event event;
+    if (SDL_PollEvent(&event))
+    {
+      if (event.type == SDL_KEYDOWN)
+      {
+        switch (event.key.keysym.sym)
+        {
+        // move viewport according to arrow keys
+        case SDLK_LEFT:
+          break;
+        case SDLK_RIGHT:
+          break;
+        case SDLK_UP:
+          break;
+        case SDLK_DOWN:
+          break;
+
+        // move player and viewport to center on player
+        case SDLK_w:
+          break;
+        case SDLK_a:
+          break;
+        case SDLK_s:
+          break;
+        case SDLK_d:
+          break;
+        }
+      }
+
+      // kill velocity on player once key is lifted
+      if (event.type == SDL_KEYUP)
+      {
+        switch (event.key.keysym.sym)
+        {
+        case SDLK_w:
+          break;
+        case SDLK_a:
+          break;
+        case SDLK_s:
+          break;
+        case SDLK_d:
+          break;
+        }
+      }
+
+      if (event.type == SDL_MOUSEBUTTONDOWN)
+      {
+        switch (event.button.button)
+        {
+        case SDL_BUTTON_LEFT:
+        {
+          printf("Left mouse button pressed at %d, %d. \n", mouseX, mouseY);
+          left_click = true;
+          break;
+        }
+
+        case SDL_BUTTON_RIGHT:
+          printf("Right mouse button pressed.\n");
+          break;
+
+        default:
+          printf("Some other mouse button pressed.\n");
+          break;
+        }
+      }
+
+      if (event.type == SDL_MOUSEBUTTONUP)
+      {
+        switch (event.button.button)
+        {
+        case SDL_BUTTON_LEFT:
+          break;
+
+        default:
+          break;
+        }
+      }
+
+      if (event.type == SDL_MOUSEMOTION)
+      {
+        // SDL_GetMouseState(&mouseX, &mouseY);
+        // printf("MOVED MOUSE\n");
+        mouseX = event.motion.x;
+        mouseY = event.motion.y;
+      }
+
+      if (event.type == SDL_QUIT)
+      {
+        // Break out of the loop on quit
+        break;
+      }
+    }
+
+    // CLEAR THE SCREEN
+    SDL_RenderClear(renderer);
+
+    // make default background black
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 225);
+
+    // update and draw FPS
+    fps_frames++;
+    if (fps_lasttime < SDL_GetTicks() - FPS_INTERVAL * 1000)
+    {
+      fps_lasttime = SDL_GetTicks();
+      fps_current = fps_frames;
+      fps_frames = 0;
+    }
+
+    drawText(renderer, "FPS: " + to_string(fps_current), 20, 1, 1, 255, 0, 0);
+
+    // * OPTIONAL CODE LINE HERE */
+    // draw mouse position
+    drawText(renderer, "Cursor at " + to_string(mouseX) + ", " + to_string(mouseY), 20, 1, 480 - 25, 255, 215, 0);
 
     // Show the renderer contents
     SDL_RenderPresent(renderer);
