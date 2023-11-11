@@ -89,7 +89,8 @@ int main(int argc, char *argv[])
                                         SDL_WINDOWPOS_UNDEFINED,
                                         WINDOW_WIDTH,
                                         WINDOW_HEIGHT,
-                                        SDL_WINDOW_OPENGL);
+                                        SDL_WINDOW_OPENGL|
+                                        SDL_WINDOW_RESIZABLE);
   if (window == nullptr)
   {
     SDL_Log("Could not create a window: %s", SDL_GetError());
@@ -99,6 +100,7 @@ int main(int argc, char *argv[])
   SDL_Surface *icon = IMG_Load("assets/icon.png");
   SDL_SetWindowIcon(window, icon);
 
+  
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC || SDL_RENDERER_ACCELERATED);
   if (renderer == nullptr)
   {
@@ -106,6 +108,7 @@ int main(int argc, char *argv[])
     return -1;
   }
 
+  SDL_RenderSetLogicalSize(renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
   SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
   SDL_Init(SDL_INIT_AUDIO);
 
